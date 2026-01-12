@@ -1,4 +1,4 @@
-"use client"
+/*"use client"
 import Image from "next/image";
 import Link from "next/link";
 import Authentication from "./_components/Authentication";
@@ -22,4 +22,24 @@ useEffect(() => {
 
     </div>
   );
+}*/
+
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { useAuthContext } from "./provider";
+
+export default function Home() {
+  const router = useRouter();
+  const user = useAuthContext();
+
+  useEffect(() => {
+    if (user) {
+      router.replace("/app"); // redirect only if logged in
+    }
+  }, [user, router]);
+
+  return null; // optional: can show loading spinner here
 }
+
