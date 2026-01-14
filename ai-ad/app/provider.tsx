@@ -33,6 +33,7 @@ function Provider({
             displayName: user.displayName,
             photoURL: user.photoURL,
             createdAt: new Date(),
+            credits: 20
           });
         }
       } else {

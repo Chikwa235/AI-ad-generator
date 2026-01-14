@@ -3,13 +3,13 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDwcDRaT3LKm4E97cR985IUHNK6kHcZHMI",
-    authDomain: "apps-e02e4.firebaseapp.com",
-    projectId: "apps-e02e4",
-    storageBucket: "apps-e02e4.appspot.com",
-    messagingSenderId: "931728242416",
-    appId: "1:931728242416:web:1450a322782504ce293435",
-    measurementId: "G-D9J6T82264"
+  apiKey: "AIzaSyCLBMNEDGHyToxh_dVVF-9vjBKYUHiLuJw",
+  authDomain: "kobby23-dcbc6.firebaseapp.com",
+  projectId: "kobby23-dcbc6",
+  storageBucket: "kobby23-dcbc6.firebasestorage.app",
+  messagingSenderId: "1046888507980",
+  appId: "1:1046888507980:web:26ad767cc027eeb411a2e9",
+  measurementId: "G-E2QMGB15X6"
 };
 
 // ✅ Prevent multiple Firebase app instances

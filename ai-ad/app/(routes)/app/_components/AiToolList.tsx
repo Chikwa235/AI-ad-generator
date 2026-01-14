@@ -1,13 +1,15 @@
 import React from 'react'
 import Image from "next/image"
 import { Button } from '@/components/ui/button'
+import Link from "next/link" 
+
 
 const AiTools=[
   {
     name:'AI Products Image',
     desc:'Generate high-quality, professional product images with ease using our AI-powered tool.',
     bannerImage:'/product-image.png',
-    path: '/'
+    path: '/creative-ai-tools/product-images'
   },
   {
     name:'AI Products Video',
@@ -37,9 +39,11 @@ const AiToolList = () => {
               <p className="text-sm opacity-70 mt-1 line-clamp-3">
                 {tool.desc}
               </p>
-              <Button size="sm" className="mt-3">
-                Create Now
-              </Button>
+              <Link href={tool.path}>
+                <Button size="sm" className="mt-3">
+                  Create Now
+                </Button>
+              </Link>
             </div>
 
             <Image
