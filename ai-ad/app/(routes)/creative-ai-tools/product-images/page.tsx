@@ -5,7 +5,7 @@ import PreviewResult from '../_components/PreviewResult'
 function ProductImages() {
   return (
     <div>
-      <h2>AI Product Image Generator</h2>
+      <h2 className="text-2xl font-bold p-2">AI Product Image Generator</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div>
             <FormInput />
