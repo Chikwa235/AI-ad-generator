@@ -1,9 +1,18 @@
 "use client"
 
 import React, { useState } from 'react'
-import { ImagePlus } from 'lucide-react'
+import { ImagePlus, Smartphone, Square , Monitor} from 'lucide-react'
 import Image from "next/image"
-
+import { Textarea } from '@/components/ui/textarea'
+import { Button } from '@/components/ui/button'
+import { Sparkle } from 'lucide-react'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 
 const sampleProduct=[
@@ -11,7 +20,7 @@ const sampleProduct=[
   '/juice-can.png',
   '/perfume.png',
   '/burger.png',
-  '/ice-cream.png'
+  '/ice-creame.png'
 ]
 
 function FormInput() {
@@ -64,12 +73,58 @@ function FormInput() {
       </div>
       {/*Sample Products */}
       <div>
+          <h2 className="opacity-40 text-center mt-3">Select Sample product to try</h2>
+      <div className="flex gap-5 items-center">
           {sampleProduct.map((product,index)=>(
-              <Image src={product} alt={product} width={60} height={60} key={index} />
-          ))}
-
-        
+              <Image src={product} alt={product} width={100} height={100} key={index} 
+              className="w-[60px] h-[60px] rounded-lg cursor-pointer hover:scale-105 transition-all"
+              onClick={()=>setPreview(product)}
+              />
+          ))} 
       </div>
+      </div>
+      
+      <div className='mt-8'>
+        <h2 className="font-semibold">2. Enter product description</h2>
+          <Textarea placeholder="Tell me more about product and how you want to display it."  
+            className="min-h-[150px] mt-2"
+          />
+
+      </div>
+      <div>
+         <div className='mt-8'>
+        <h2 className="font-semibold">3. Select Image Size</h2>
+        <Select>
+          <SelectTrigger className="w-full">
+            <SelectValue placeholder="Select Resolution" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="1024*1024">
+              <div className="flex items-center gap-2">
+                <Square className='h-4 w-4' />
+                <span>1:1</span>
+              </div>
+            </SelectItem>
+            <SelectItem value="1536*1024">              
+              <div className="flex items-center gap-2">
+                <Monitor className='h-4 w-4' />
+                <span>16:9</span>
+              </div>
+            </SelectItem>
+            <SelectItem value="1024*1536">             
+              <div className="flex items-center gap-2">
+                <Smartphone className='h-4 w-4' />
+                <span>9:16</span>
+              </div>
+            </SelectItem>
+          </SelectContent>
+        </Select>
+
+      </div>
+      </div>
+      
+      <Button className="mt-5 w-full"> <Sparkle /> Generate </Button>
+      <h2 className="mt-1 text-sm opacity-35 text-center">5 Credits to Generate</h2>
     </div>
   )
 }
