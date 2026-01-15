@@ -2,6 +2,17 @@
 
 import React, { useState } from 'react'
 import { ImagePlus } from 'lucide-react'
+import Image from "next/image"
+
+
+
+const sampleProduct=[
+  '/headphone.png',
+  '/juice-can.png',
+  '/perfume.png',
+  '/burger.png',
+  '/ice-cream.png'
+]
 
 function FormInput() {
   const [preview, setPreview] = useState<string | null>(null)
@@ -50,6 +61,14 @@ function FormInput() {
           accept="image/*"
           onChange={(e) => onFileSelect(e.target.files)}
         />
+      </div>
+      {/*Sample Products */}
+      <div>
+          {sampleProduct.map((product,index)=>(
+              <Image src={product} alt={product} width={60} height={60} key={index} />
+          ))}
+
+        
       </div>
     </div>
   )
