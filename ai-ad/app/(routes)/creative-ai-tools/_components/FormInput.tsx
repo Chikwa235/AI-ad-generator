@@ -23,7 +23,13 @@ const sampleProduct=[
   '/ice-creame.png'
 ]
 
-function FormInput() {
+type Props = {
+  onHandleInputChange: (key: string, value: any) => void
+  onGenerate: () => void
+}
+
+function FormInput({ onHandleInputChange, onGenerate }: Props) {
+
   const [preview, setPreview] = useState<string | null>(null)
 
   const onFileSelect = (files: FileList | null) => {
@@ -35,8 +41,9 @@ function FormInput() {
       alert("File size exceeds 5MB")
       return
     }
+    onHandleInputChange('file',file);
+    setPreview(URL.createObjectURL(file));
 
-    setPreview(URL.createObjectURL(file))
   }
 
   return (
@@ -78,7 +85,9 @@ function FormInput() {
           {sampleProduct.map((product,index)=>(
               <Image src={product} alt={product} width={100} height={100} key={index} 
               className="w-[60px] h-[60px] rounded-lg cursor-pointer hover:scale-105 transition-all"
-              onClick={()=>setPreview(product)}
+              onClick={()=>{setPreview(product);
+              onHandleInputChange('imageUrl', product);
+              }}
               />
           ))} 
       </div>
@@ -88,13 +97,14 @@ function FormInput() {
         <h2 className="font-semibold">2. Enter product description</h2>
           <Textarea placeholder="Tell me more about product and how you want to display it."  
             className="min-h-[150px] mt-2"
+            onChange={(event) => onHandleInputChange('description', event.target.value)}
           />
 
       </div>
       <div>
          <div className='mt-8'>
         <h2 className="font-semibold">3. Select Image Size</h2>
-        <Select>
+        <Select onValueChange={(value)=>onHandleInputChange('size',value)}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Select Resolution" />
           </SelectTrigger>
@@ -123,7 +133,7 @@ function FormInput() {
       </div>
       </div>
       
-      <Button className="mt-5 w-full"> <Sparkle /> Generate </Button>
+      <Button className="mt-5 w-full" onClick={onGenerate}> <Sparkle /> Generate </Button>
       <h2 className="mt-1 text-sm opacity-35 text-center">5 Credits to Generate</h2>
     </div>
   )
