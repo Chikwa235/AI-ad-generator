@@ -1,6 +1,7 @@
 {
-  "name": "nextjs-boilerplate-1",
-  "version": "0.1.0",
+  "name": "ai-ad",
+  "version": "1.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -27,6 +28,7 @@
     "lucide-react": "^0.474.0",
     "next": "^16.1.1",
     "next-themes": "^0.4.6",
+    "openai": "^6.16.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "tailwind-merge": "^3.0.1",

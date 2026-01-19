@@ -1,0 +1,22 @@
+HTTP/1.1 401 Unauthorized
+Content-Type: application/json; charset=utf-8
+Content-Length: 41
+Connection: keep-alive
+Date: Mon, 19 Jan 2026 10:56:18 GMT
+ETag: W/"29-dEMcHWfJi78ZR1aqzb1ELAhp3Us"
+X-Powered-By: huggingface-moon
+Vary: Origin
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+X-Robots-Tag: none
+X-Request-Id: Root=1-696e0dd2-1e6b1c2511ea75a75f32e14d
+cross-origin-opener-policy: same-origin
+Referrer-Policy: strict-origin-when-cross-origin
+X-Error-Message: Invalid username or password.
+WWW-Authenticate: Bearer realm="Authentication required", charset="UTF-8"
+X-Cache: Error from cloudfront
+Via: 1.1 a457669b5053d5105fd397222bf5bcfc.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: JNB51-P3
+X-Amz-Cf-Id: kuddb5UKgnyOcWgpXYlMAxi14IuesnFGde4sjHVBHLFhYFIrNqv-sw==
+
+{"error":"Invalid username or password."}
